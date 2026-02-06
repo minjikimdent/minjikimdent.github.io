@@ -26,6 +26,7 @@
       font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
       background: #000;
       color: #fff;
+      line-height: 1.6;
     }
 
     a {
@@ -40,11 +41,28 @@
     /* Header */
     header {
       min-height: 100vh;
-      display: grid;
-      align-content: center;
+      display: flex; /* 이미지와 제목 나란히 */
+      justify-content: space-between;
+      align-items: center;
       max-width: calc(100% - (2 * var(--gutter)));
       padding-left: 48px;
+      padding-right: 48px;
       text-align: left;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-photo {
+      flex-shrink: 0;
+    }
+
+    .header-photo img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #fff;
     }
 
     h2 {
@@ -53,13 +71,14 @@
 
     .fluid {
       font-size: clamp(4rem, 12vw, 12rem);
-      line-height: 0.6;
+      line-height: 1.2;
       margin: 0;
     }
 
     h2.fluid {
       font-size: clamp(0.5rem, 2vw, 1.5rem);
       padding-top: 48px;
+      line-height: 1.4;
     }
 
     /* Section setup */
@@ -175,27 +194,6 @@
       height: 100%;
     }
 
-    /* Portfolio extra sections */
-    .portfolio-section {
-      padding: 60px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .portfolio-section h2 {
-      color: #4CAF50;
-      margin-bottom: 20px;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: #111;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
     footer {
       background: #111;
       color: #fff;
@@ -208,14 +206,20 @@
 <body>
   <div class="content-wrap">
     <header>
-      <h1 class="fluid">Minji<br />Portfolio</h1>
-      <h2 class="fluid">Scroll down to explore</h2>
+      <div class="header-text">
+        <h1 class="fluid">Minji<br />Portfolio</h1>
+        <h2 class="fluid">Scroll down to explore</h2>
+      </div>
+      <div class="header-photo">
+        <!-- 증명사진 추가 -->
+        <img src="images/증명사진_잘라둔것.jpg" alt="Minji 증명사진">
+      </div>
     </header>
     <main>
       <section>
         <div class="content">
           <div class="grid">
-            <!-- Layers with images (same as Codepen example) -->
+            <!-- Layers with images -->
             <div class="layer">
               <div><img src="https://images.unsplash.com/photo-1463100099107-aa0980c362e6?w=800" alt="" /></div>
               <div><img src="https://images.unsplash.com/photo-1556304044-0699e31c6a34?w=800" alt="" /></div>
@@ -242,5 +246,3 @@
           </div>
         </div>
       </section>
-      <section>
-        <h2 class
