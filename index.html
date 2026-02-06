@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minji 포트폴리오</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gutter: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --gutter: 1rem;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+      background: #000;
+      color: #fff;
+      line-height: 1.6; /* 본문 전체 가독성 개선 */
+    }
+
+    a {
+      color: white;
+    }
+
+    .content-wrap {
+      background: #000;
+      overflow: clip;
+    }
+
+    /* Header */
+    header {
+      min-height: 100vh;
+      display: grid;
+      align-content: center;
+      max-width: calc(100% - (2 * var(--gutter)));
+      padding-left: 48px;
+      text-align: left;
+    }
+
+    h2 {
+      padding-top: 12px;
+    }
+
+    .fluid {
+      font-size: clamp(4rem, 12vw, 12rem);
+      line-height: 1.2; /* 제목 줄간격 넓힘 */
+      margin: 0;
+    }
+
+    h2.fluid {
+      font-size: clamp(0.5rem, 2vw, 1.5rem);
+      padding-top: 48px;
+      line-height: 1.4; /* 소제목도 가독성 개선 */
+    }
+
+    /* Section setup */
+    main section:first-of-type {
+      min-height: 240vh;
+    }
+
+    .content {
+      min-height: 100vh;
+      width:
